@@ -134,6 +134,11 @@ with col2:
             st.subheader("🤖 AI Reasoning:")
             st.warning(reasoning)   
             
+            # If the AI screams "DANGER" (> 80), we reject regardless of the math.
+            if soft_risk_score > 80:
+                st.error("Recommendation: REJECT LOAN (Behavioral Red Flag)")
+                st.caption("reason: The AI detected severe behavioral risk that overrides financial history.")
+            
             if final_score > 60:
                 st.error("Recommendation: REJECT LOAN")
             else:
