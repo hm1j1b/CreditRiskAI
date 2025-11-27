@@ -68,8 +68,9 @@ with col1:
     customer_data = df[df['Name'] == selected_name].iloc[0]
     
     # Calculate DTI Ratio dynamically
-    dti = customer_data['Debt'] / customer_data['Income']
+    dti = customer_data['Debt_Ratio']
     
+    # Display their financial profile
     st.info(f"📊 **Financial Profile for {selected_name}**")
     st.write(f"**Income:** ${customer_data['Income']:,}")
     st.write(f"**Debt:** ${customer_data['Debt']:,}")
@@ -79,6 +80,7 @@ with col1:
     st.code(customer_data['Recent_Transactions'])
     st.metric("Debt-to-Income Ratio", f"{dti:.2%}") 
     
+    # Warning if DTI is high
     if dti > 0.40: # 40% is a common bank warning level
         st.warning("⚠️ High Debt Ratio")
     
@@ -111,7 +113,13 @@ with col2:
                 # Fallback if AI output format varies
                 soft_risk_score = 50 
                 reasoning = ai_result
-
+                
+            # Compliance Check
+            if "Bias Check: Passed" in reasoning:
+                st.caption("✅ Compliance: Bias Check Passed")
+            else:
+                st.caption("⚠️ Compliance: Manual Review Required")
+            
             # Final Score = 60% Math + 40% AI
             final_score = (hard_risk_score * 0.6) + (soft_risk_score * 0.4)
             
@@ -121,10 +129,10 @@ with col2:
             m1, m2, m3 = st.columns(3)
             m1.metric("Financial Risk", f"{hard_risk_score:.0f}")
             m2.metric("Behavioral Risk (AI)", f"{soft_risk_score:.0f}")
-            m3.metric("🏆 FUSION SCORE", f"{final_score:.0f}")
+            m3.metric("Final Score", f"{final_score:.0f}")
             
             st.subheader("🤖 AI Reasoning:")
-            st.warning(reasoning)
+            st.warning(reasoning)   
             
             if final_score > 60:
                 st.error("Recommendation: REJECT LOAN")
