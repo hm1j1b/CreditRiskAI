@@ -1,2 +1,3 @@
 # Credit AI Risk Assessment
-Hackathon Project
+Hackathon Project 
+Xenber Track 2 | An LLM-Based Risk Assessment for AI Credit Scoring System 
