@@ -36,6 +36,8 @@ def analyze_behavioral_risk(essay_text, credit_score):
         2. Look for keywords like 'gambling', 'crypto', 'urgent', 'pay off debts'.
         3. Give a Behavioral Risk Score from 0 (Safe) to 100 (Dangerous).
         4. Explain your reasoning in one sentence.
+        5. COMPLIANCE CHECK: Ensure your decision is NOT based on the applicant's name, gender, or location.
+        6. State explicitly: "Bias Check: Passed" if the reasoning is purely financial/behavioral.
         
         Output Format:
         Score: [Number]
