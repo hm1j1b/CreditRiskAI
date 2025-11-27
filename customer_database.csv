@@ -1,51 +1,51 @@
-Name,Income,Debt,Credit_Score,Historical_Risk
-Tanner Mccall,65461,14395,569,High Risk
-James Meadows,45011,8667,731,Low Risk
-Melinda Newton,69552,15177,788,Low Risk
-Joseph Wilson,31907,25060,550,High Risk
-Terri Booth,35348,16881,372,High Risk
-Fernando Fuentes,94904,23869,311,High Risk
-Miranda Martinez,115958,31199,615,Low Risk
-Tonya Gonzalez,140620,7570,633,Low Risk
-Jacqueline Ramirez,145276,6653,627,Low Risk
-Morgan Sloan,35121,4542,382,High Risk
-Maria Wallace,135280,22652,312,High Risk
-Natalie Nicholson,135731,9682,457,High Risk
-Melissa Aguilar,46621,32465,461,High Risk
-Cheryl Miller,62467,9244,846,Low Risk
-Mitchell Martin,85660,14277,662,Low Risk
-Charles Moore,41619,333,588,Low Risk
-James Silva,110311,22236,324,High Risk
-Shawn Sutton,47753,14994,406,High Risk
-Deborah Jordan,55959,28186,723,Low Risk
-David Williams,99272,226,630,Low Risk
-Emily Burns,81430,24584,707,Low Risk
-Aaron Brown,108204,36540,799,Low Risk
-Kelly Wells,55979,18820,356,High Risk
-William Curtis,133036,9941,835,Low Risk
-Jonathan Mendez,68943,19954,849,Low Risk
-Lauren Stephenson,81665,21617,734,Low Risk
-Teresa Taylor,45502,14897,319,High Risk
-Joseph Potter,43308,39210,763,High Risk
-Gabriel Anderson,77405,12694,764,Low Risk
-Rebecca Carpenter,87389,20156,454,High Risk
-Mrs. Sherri Wilson,52038,11470,345,High Risk
-Sharon Reid,50496,18002,629,Low Risk
-Catherine Martinez DVM,71429,7679,421,High Risk
-Pamela Singleton,53274,11709,430,High Risk
-Jacob Atkins,64591,20352,815,Low Risk
-Cindy Singleton,113173,2078,761,Low Risk
-Jody Wallace,112570,20585,498,High Risk
-Traci Delgado,68857,25422,590,Low Risk
-Larry Howard,79629,19163,656,Low Risk
-Lisa Velasquez,111207,9144,730,Low Risk
-Richard Griffin,90373,16495,451,High Risk
-Michael Dodson,67902,898,573,High Risk
-Joshua Simmons,64604,21004,358,High Risk
-Emily Thomas,106338,26917,442,High Risk
-Erin Zimmerman,93615,3617,507,High Risk
-Jeffrey Rose,60498,5344,691,Low Risk
-Kent Reyes,93303,26445,478,High Risk
-Jennifer Elliott,70123,35213,432,High Risk
-Travis Glass,117192,9023,718,Low Risk
-Kenneth Spencer,64739,2829,744,Low Risk
+Name,Income,Debt,Credit_Score,Historical_Risk,Recent_Transactions
+John Williams,132672,16303,809,Low Risk,"Shell Station, Tesco, Uber, Netflix, Shell Station"
+Sherri Espinoza,122267,20492,843,Low Risk,"Uber, Shell Station, Uber, Uber, Amazon"
+Kyle Daniels,43041,26416,793,High Risk,"Shell Station, Netflix, Amazon, Netflix, CryptoBinance"
+Rebecca Watson,106929,13855,447,High Risk,"Unknown Transfer, Spotify, Spotify, Starbucks, Tesco"
+Jennifer Collins,38877,12946,806,Low Risk,"Tesco, Tesco, Starbucks, Starbucks, Uber"
+Joseph Davis,43466,8758,816,Low Risk,"Tesco, Starbucks, Amazon, Netflix, Uber"
+James Sanders,120981,25832,844,Low Risk,"Amazon, Uber, Netflix, Spotify, Spotify"
+Dana Sullivan,41113,17846,750,Low Risk,"Netflix, Uber, Uber, Shell Station, Tesco"
+William Edwards,65518,18003,647,Low Risk,"Uber, Uber, Netflix, Shell Station, Shell Station"
+Jamie Garner,128143,13420,822,Low Risk,"Shell Station, Amazon, Shell Station, Spotify, Starbucks"
+Tracy Pittman,137123,16231,834,Low Risk,"Amazon, Shell Station, Netflix, Starbucks, Uber"
+Melinda White,99902,11723,719,Low Risk,"Spotify, Shell Station, Tesco, Amazon, Tesco"
+Sandra Pacheco,29413,21305,564,High Risk,"CryptoBinance, Amazon, Amazon, Shell Station, Tesco"
+Michael Porter,129269,17999,493,High Risk,"Starbucks, LuxuryWatches, Starbucks, Starbucks, Amazon"
+Margaret Flores,77342,5251,448,High Risk,"Spotify, CryptoBinance, Amazon, Spotify, Amazon"
+Jacob George,128502,1295,312,High Risk,"Amazon, Starbucks, Shell Station, Spotify, Unknown Transfer"
+Alexis Brewer,96614,37069,734,Low Risk,"Spotify, Spotify, Netflix, Starbucks, Tesco"
+Joseph Bailey,80107,224,781,Low Risk,"Amazon, Shell Station, Spotify, Amazon, Netflix"
+Taylor Stevens,117426,10446,505,High Risk,"Starbucks, CryptoBinance, Tesco, Netflix, Shell Station"
+Joseph Kim,134016,14374,358,High Risk,"Tesco, CryptoBinance, Netflix, Starbucks, Amazon"
+Carla Woods,49105,12429,374,High Risk,"Netflix, Amazon, Spotify, LuxuryWatches, Spotify"
+Amy Morgan,99539,15620,791,Low Risk,"Shell Station, Amazon, Netflix, Amazon, Shell Station"
+Tammy Reynolds,76048,13022,631,Low Risk,"Netflix, Tesco, Netflix, Amazon, Tesco"
+Caleb Webster,36676,8961,412,High Risk,"CryptoBinance, Uber, Amazon, Amazon, Amazon"
+Bonnie Lewis,51627,25258,577,High Risk,"Tesco, Uber, PokerStars, Shell Station, Spotify"
+Diamond George,50500,30313,420,High Risk,"Netflix, Tesco, LuxuryWatches, Amazon, Tesco"
+Frederick Harris,116519,11041,687,Low Risk,"Shell Station, Netflix, Shell Station, Starbucks, Starbucks"
+Michael Vega,50624,23460,808,Low Risk,"Spotify, Shell Station, Tesco, Spotify, Amazon"
+Andrea Bradshaw,129932,5264,626,Low Risk,"Netflix, Amazon, Amazon, Tesco, Tesco"
+Timothy Lee,65702,38832,600,Low Risk,"Shell Station, Uber, Starbucks, Starbucks, Uber"
+Andrea Brooks,118976,20834,844,Low Risk,"Shell Station, Spotify, Uber, Uber, Netflix"
+Pamela Schwartz,42542,6971,349,High Risk,"Netflix, CryptoBinance, Amazon, Starbucks, Uber"
+Brenda Fowler,71315,9648,427,High Risk,"CryptoBinance, Spotify, Starbucks, Spotify, Starbucks"
+Terry Allen,47244,22758,430,High Risk,"Uber, PokerStars, Tesco, Shell Station, Netflix"
+Morgan Lawrence,60427,9419,791,Low Risk,"Netflix, Starbucks, Amazon, Tesco, Amazon"
+Kelly Hodge,53536,19630,530,High Risk,"Amazon, Uber, Unknown Transfer, Tesco, Spotify"
+Mrs. Cynthia Shepherd,129799,3630,723,Low Risk,"Shell Station, Spotify, Spotify, Tesco, Uber"
+Holly Thomas,125266,15379,427,High Risk,"Tesco, Tesco, PokerStars, Starbucks, Spotify"
+Carolyn Cain,87162,4162,727,Low Risk,"Tesco, Netflix, Uber, Starbucks, Netflix"
+Holly White,134034,30402,624,Low Risk,"Starbucks, Tesco, Spotify, Spotify, Starbucks"
+Dr. Lori Franklin,130874,23959,835,Low Risk,"Spotify, Starbucks, Netflix, Uber, Amazon"
+Christopher Mendez,60187,15193,697,Low Risk,"Uber, Shell Station, Starbucks, Spotify, Amazon"
+Jamie Gibson,60080,33666,827,Low Risk,"Spotify, Shell Station, Amazon, Shell Station, Netflix"
+Dennis Cobb,50314,24889,655,Low Risk,"Spotify, Amazon, Shell Station, Netflix, Spotify"
+Andrew Stevenson,110534,16233,326,High Risk,"Amazon, Shell Station, Unknown Transfer, Starbucks, Shell Station"
+Alexis Ferguson,148300,2341,573,High Risk,"Bet365, Amazon, Uber, Starbucks, Netflix"
+Christina Cox,99014,30289,747,Low Risk,"Uber, Amazon, Uber, Spotify, Amazon"
+Logan Alvarez,38489,10852,420,High Risk,"Starbucks, Shell Station, Spotify, CasinoRoyal, Spotify"
+Alisha Kelly,57454,12548,687,Low Risk,"Tesco, Tesco, Uber, Uber, Shell Station"
+Monica Zimmerman,54554,9309,500,High Risk,"Shell Station, Uber, Starbucks, Unknown Transfer, Amazon"

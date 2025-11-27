@@ -21,7 +21,7 @@ def load_data():
 df = load_data()
 
 # 3. AI Behavioural Risk Analysis Function
-def analyze_behavioral_risk(essay_text, credit_score):
+def analyze_behavioral_risk(essay_text, credit_score, transactions_history):
     llm = ChatOpenAI(model="gpt-5.1", temperature=0)
     
     # We give the AI the credit score as context so it knows if the user is lying
@@ -29,6 +29,7 @@ def analyze_behavioral_risk(essay_text, credit_score):
         ("system", "You are a Senior Credit Risk Officer. Analyze the loan application essay."),
         ("human", """
         Applicant Credit Score: {score}
+        Recent Transactions: "{transactions}"
         Applicant Essay: "{text}"
         
         Task:
@@ -46,7 +47,7 @@ def analyze_behavioral_risk(essay_text, credit_score):
     ])
     
     chain = prompt | llm
-    response = chain.invoke({"score": credit_score, "text": essay_text})
+    response = chain.invoke({"score": credit_score, "text": essay_text, "transactions": transactions_history})
     return response.content
 
 # --- THE USER INTERFACE (Streamlit) ---
@@ -70,6 +71,9 @@ with col1:
     st.write(f"**Income:** ${customer_data['Income']:,}")
     st.write(f"**Debt:** ${customer_data['Debt']:,}")
     st.write(f"**Credit Score:** {customer_data['Credit_Score']}")
+    st.write("---")
+    st.write("**Recent Transactions:**")
+    st.code(customer_data['Recent_Transactions'])
     
     # Simple Math Rule for "Hard Risk"
     hard_risk_score = 100 - (customer_data['Credit_Score'] / 8.5)
@@ -82,10 +86,14 @@ with col2:
     essay_input = st.text_area("Applicant's Statement / Loan Essay:", default_essay, height=150)
     
     if st.button("Run Multimodal Assessment"):
-        with st.spinner("AI is reading the essay and cross-referencing with CSV data..."):
+        with st.spinner("AI is reading the essay, transactions, and cross-referencing with CSV data..."):
             
             # CALL THE AI
-            ai_result = analyze_behavioral_risk(essay_input, customer_data['Credit_Score'])
+            ai_result = analyze_behavioral_risk(
+                essay_input, 
+                customer_data['Credit_Score'], 
+                customer_data['Recent_Transactions']
+            )
             
             # Parse the result (Simple string splitting)
             try:
@@ -114,5 +122,4 @@ with col2:
             if final_score > 60:
                 st.error("Recommendation: REJECT LOAN")
             else:
-                st.snow()
                 st.success("Recommendation: APPROVE LOAN")
