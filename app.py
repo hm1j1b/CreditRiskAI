@@ -13,14 +13,14 @@ if not os.getenv("OPENAI_API_KEY"):
     st.error("⚠️ API Key not found! Please check your .env file.")
     st.stop()
 
-# 2. Load the Financial Data (The "Hard" Numbers)
+# 2. Load the Financial Data (CSV)
 @st.cache_data
 def load_data():
     return pd.read_csv("customer_database.csv")
 
 df = load_data()
 
-# 3. Define the AI Logic (The "Soft" Text Analysis)
+# 3. AI Behavioural Risk Analysis Function
 def analyze_behavioral_risk(essay_text, credit_score):
     llm = ChatOpenAI(model="gpt-5.1", temperature=0)
     
@@ -50,7 +50,7 @@ def analyze_behavioral_risk(essay_text, credit_score):
 # --- THE USER INTERFACE (Streamlit) ---
 st.set_page_config(page_title="AI Credit Scorer", layout="wide")
 
-st.title("🏦 FinTech Hackathon: Multimodal Credit Risk")
+st.title("Multimodal Credit Risk AI Assessment")
 st.markdown("Combines **Structured Data (CSV)** + **Unstructured Data (Text)**.")
 
 # Split screen into two columns
@@ -71,24 +71,22 @@ with col1:
     
     # Simple Math Rule for "Hard Risk"
     hard_risk_score = 100 - (customer_data['Credit_Score'] / 8.5)
-    st.metric("Financial Risk (Math Only)", f"{hard_risk_score:.1f}/100")
+    st.metric("Financial Risk", f"{hard_risk_score:.1f}/100")
 
 with col2:
     st.header("2. Behavioral Analysis (AI)")
     
-    # In a real app, they would upload a PDF. Here, we simulate typing the essay.
     default_essay = "I have a stable job and I need this loan to renovate my kitchen. I have always paid my bills on time."
     essay_input = st.text_area("Applicant's Statement / Loan Essay:", default_essay, height=150)
     
-    if st.button("🚀 Run Multimodal Assessment"):
+    if st.button("Run Multimodal Assessment"):
         with st.spinner("AI is reading the essay and cross-referencing with CSV data..."):
             
             # CALL THE AI
             ai_result = analyze_behavioral_risk(essay_input, customer_data['Credit_Score'])
             
-            # PARSE THE RESULT (Simple string splitting)
+            # Parse the result (Simple string splitting)
             try:
-                # We expect the AI to say "Score: 40..."
                 score_text = ai_result.split("Score:")[1].split("\n")[0].strip()
                 soft_risk_score = float(score_text)
                 reasoning = ai_result.split("Reason:")[1].strip()
@@ -114,5 +112,5 @@ with col2:
             if final_score > 60:
                 st.error("Recommendation: REJECT LOAN")
             else:
-                st.balloons()
+                st.snow()
                 st.success("Recommendation: APPROVE LOAN")
