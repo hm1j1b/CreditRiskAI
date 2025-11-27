@@ -20,18 +20,24 @@ def create_fake_database():
         credit_score = random.randint(300, 850)
         transactions = random.choices(safe_merchants, k=5)
         
+        # Debt ratio
+        if income > 0:
+            debt_ratio = debt / income 
+        else:
+            debt_ratio = 1.0 # Max risk if no income
+        
         # Simple logic: High debt + Low Score = High Risk
-        if credit_score < 580 or debt > (income * 0.6):
+        if credit_score < 580 or debt_ratio > 0.6:
             risk_category = "High Risk"
             transactions[random.randint(0, 4)] = random.choice(risky_merchants)
         else:
             risk_category = "Low Risk"
         
         transaction_str = ", ".join(transactions)
-        data.append([name, income, debt, credit_score, risk_category, transaction_str])
+        data.append([name, income, debt, debt_ratio, credit_score, risk_category, transaction_str])
 
     # Save to CSV
-    df = pd.DataFrame(data, columns=['Name', 'Income', 'Debt', 'Credit_Score', 'Historical_Risk', 'Recent_Transactions'])
+    df = pd.DataFrame(data, columns=['Name', 'Income', 'Debt', 'Debt_Ratio', 'Credit_Score', 'Historical_Risk', 'Recent_Transactions'])
     df.to_csv("customer_database.csv", index=False)
     print("✅ Success! 'customer_database.csv' created.")
 

@@ -67,13 +67,20 @@ with col1:
     # Retrieve their financial stats automatically
     customer_data = df[df['Name'] == selected_name].iloc[0]
     
+    # Calculate DTI Ratio dynamically
+    dti = customer_data['Debt'] / customer_data['Income']
+    
     st.info(f"📊 **Financial Profile for {selected_name}**")
     st.write(f"**Income:** ${customer_data['Income']:,}")
     st.write(f"**Debt:** ${customer_data['Debt']:,}")
     st.write(f"**Credit Score:** {customer_data['Credit_Score']}")
-    st.write("---")
+    st.write("")
     st.write("**Recent Transactions:**")
     st.code(customer_data['Recent_Transactions'])
+    st.metric("Debt-to-Income Ratio", f"{dti:.2%}") 
+    
+    if dti > 0.40: # 40% is a common bank warning level
+        st.warning("⚠️ High Debt Ratio")
     
     # Simple Math Rule for "Hard Risk"
     hard_risk_score = 100 - (customer_data['Credit_Score'] / 8.5)
