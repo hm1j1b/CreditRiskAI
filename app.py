@@ -138,8 +138,7 @@ with col2:
             if soft_risk_score > 80:
                 st.error("Recommendation: REJECT LOAN (Behavioral Red Flag)")
                 st.caption("reason: The AI detected severe behavioral risk that overrides financial history.")
-            
-            if final_score > 60:
+            elif final_score > 60:
                 st.error("Recommendation: REJECT LOAN")
             else:
                 st.success("Recommendation: APPROVE LOAN")
